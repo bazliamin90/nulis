@@ -114,7 +114,7 @@ headerTemplate.innerHTML = `
         aria-label="Search list items"
       />
       <ol id="list">
-          <li><a href="index4.html">BMJ Case report OCD triggered by news reported of contaminated food</a></li>
+          <li><a href="index4.html">BMJ Case report: OCD triggered by news of contaminated food</a></li>
 		  <li><a href="index3.html">Study Designs</a></li>
 		  <li><a href="index.html">Tutorial - Past Year</a></li>
           <li><a href="index2.html">Tutor Biostat & Epidemiology</a></li>
