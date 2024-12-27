@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="header.js"></script>
+  <script src="nav.js"></script>
+  <title>Bazli's</title>
+</head>
+<body>
+<main>
+  <header3-component></header3-component>
+  <header-component></header-component>
+  <h3>Tutor 2</h3>
+  <div id="slidesImages">Loading...</div>
+</main>
+  <script>
+    // Replace with your Google Apps Script Web App URL
+    const webAppUrl = 'https://script.google.com/macros/s/AKfycbwX5fYvMtoaKRuGWKFIJcQ49ZK1YK_0A73HbeAneWdhMSOxVyN0DrewJzkGCDXYZGp8/exec'; // Replace with your Web App URL
+
+    // Fetch slide images from the Web App
+    fetch(webAppUrl)
+      .then(response => response.text())  // Get the HTML content
+      .then(data => {
+        document.getElementById('slidesImages').innerHTML = data; // Inject the HTML content
+      })
+      .catch(error => {
+        console.error('Error fetching slides images:', error);
+        document.getElementById('slidesImages').innerText = 'Failed to load the slides.';
+      });
+  </script>
+</body>
+</html>

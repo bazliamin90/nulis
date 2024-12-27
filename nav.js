@@ -114,10 +114,13 @@ headerTemplate.innerHTML = `
         aria-label="Search list items"
       />
       <ol id="list">
-          <li><a href="index4.html">BMJ Case report: OCD triggered by news of contaminated food</a></li>
-		  <li><a href="index3.html">Study Designs</a></li>
-		  <li><a href="index.html">Tutorial - Past Year</a></li>
-          <li><a href="index2.html">Tutor Biostat & Epidemiology</a></li>
+          <li><a href="index2.html">Biostats notes</a></li>
+		  <li><a href="index4.html">BMJ Case report: OCD triggered by news of contaminated food</a></li>
+		  <li><a href="index3.html">Study designs notes</a></li>
+		  <li><a href="index.html">Past year exam</a></li>
+		  <li><a href="index5.html">Tutor 2 slides</a></li>
+		  <li><a href="index6.html">Tutor 3 slides</a></li>
+		  <li><a href="index7.html">Tutor 4 slides</a></li>
       </ol>
   </div>
 `;
