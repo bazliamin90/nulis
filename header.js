@@ -153,9 +153,10 @@ headerTemplate3.innerHTML = `
     aria-label="Search list items"
   />
   <ol id="list">
-    <li><a href="index2.html">Biostats notes</a></li>
+    <li><a href="index.html">About</a></li>
+	<li><a href="index2.html">Biostats notes</a></li>
     <li><a href="index4.html">BMJ Case report: OCD triggered by news of contaminated food</a></li>
-    <li><a href="index.html">Past year exam</a></li>
+    <li><a href="index9.html">Past year exam</a></li>
 	<li><a href="index3.html">Study designs notes</a></li>
     <li><a href="index5.html">Tutor 2 slides</a></li>
     <li><a href="index6.html">Tutor 3 slides</a></li>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="header.js"></script>
+  <title>Bazli's</title>
+</head>
+<body>
+<header3-component></header3-component>
+<main>
+  <h3>Tutorial -  Past Year</h3>
+  <div id="docContent">Loading...</div>
+</main>
+  <script>
+    // Replace this with the URL of your deployed Google Apps Script web app
+    const webAppUrl = 'https://script.google.com/macros/s/AKfycby54PJXFPXckd7Rj_En3cr3UB4XO3HGgC2hxg1R6mHulmxtqlDJG54RPtrdxd9A0p8I/exec';  // Replace with your Web App URL
+
+    // Fetch content from Google Docs using the Web App
+    fetch(webAppUrl)
+      .then(response => response.text())  // Get the HTML content
+      .then(data => {
+        document.getElementById('docContent').innerHTML = data;  // Inject the HTML content
+      })
+      .catch(error => {
+        console.error('Error fetching document:', error);
+        document.getElementById('docContent').innerText = 'Failed to load the document.';
+      });
+  </script>
+</body>
+</html>
