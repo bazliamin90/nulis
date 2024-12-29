@@ -153,7 +153,9 @@ headerTemplate3.innerHTML = `
     aria-label="Search list items"
   />
   <ol id="list">
-    <li><a href="index.html">About</a></li>
+    
+	<b>Biostats & epidemiology</b>
+	<li><a href="index.html">About</a></li>
 	<li><a href="index2.html">Biostats notes</a></li>
     <li><a href="index4.html">BMJ Case report: OCD triggered by news of contaminated food</a></li>
     <li><a href="index9.html">Past year exam</a></li>
@@ -162,6 +164,9 @@ headerTemplate3.innerHTML = `
     <li><a href="index6.html">Tutor 3 slides</a></li>
     <li><a href="index7.html">Tutor 4 slides</a></li>
 	<li><a href="index8.html">Tutor 5 slides</a></li>
+	
+	<b>Tajwid</b>
+	<li><a href="index10.html">Tajwid: Hukum Ro</a></li>
   </ol>
 </div>
 `;
