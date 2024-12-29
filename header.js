@@ -5,7 +5,7 @@ headerTemplate3.innerHTML = `
 	.header {
 		display: flex;
 		margin: 0 auto;
-		box-shadow: 0 4px 2px -2px gray;
+		border-bottom: 5px solid #ccc;
 		background-color: #f7edff;
 		position: sticky;
 		top: 0;
@@ -30,7 +30,7 @@ headerTemplate3.innerHTML = `
 		display: flex;
 		align-items: center;
 		padding: 5px 0;
-		margin: 5px 0px;
+		margin: 0px 0px;
 		max-width: 50rem;
 		width: 100%;
 	}	
@@ -40,11 +40,11 @@ headerTemplate3.innerHTML = `
 		color: white;
 		background-color: #555;
 		border-radius: 4px;
-		padding: 5px 6px;
+		padding: 6px 6px;
 	}
 	
 	.scroll-box {
-        width: 30%;
+        width: 70%;
         height: 150px;
         border: 3px solid black;
         padding: 10px;
@@ -52,10 +52,9 @@ headerTemplate3.innerHTML = `
         overflow-y: scroll;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: opacity 0.3s ease;
-        position: absolute;
+        position: sticky;
         top: 35%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+		margin: 0 auto;
         display: none;
         z-index: 1000;
     }
@@ -87,19 +86,20 @@ headerTemplate3.innerHTML = `
         font-family: monospace;
 		margin: 0; /* Remove extra margins */
         padding: 0; /* Remove extra padding */
-        list-style-position: inside; /* Ensure list numbers are visible within the box */
+		list-style-position: outside;
+		padding-left: 1.5em;
 		color: red;
     }
 
 	.scroll-box ol a{
 		font-family: monospace;
-		text-decoration: underline grey dotted;
-		text-underline-offset: 5px;
+		text-decoration: underline #ccc dotted;
+		text-underline-offset: 3px;
 		color: black;
 	}
 
     .scroll-box li {
-        padding: 5px 0; /* Add spacing between list items */
+		padding-bottom: 5px;
     }
 
     #overlay {
@@ -119,6 +119,7 @@ headerTemplate3.innerHTML = `
 	
 	@media (max-width: 600px) {
 		.header {
+			border: none;
 			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 		}
 		
@@ -132,6 +133,7 @@ headerTemplate3.innerHTML = `
 			top: 0;
 			left: 0;
 			transform: none;
+			margin: 0 0;
 		}
 	}
 </style>
@@ -153,11 +155,12 @@ headerTemplate3.innerHTML = `
   <ol id="list">
     <li><a href="index2.html">Biostats notes</a></li>
     <li><a href="index4.html">BMJ Case report: OCD triggered by news of contaminated food</a></li>
-    <li><a href="index3.html">Study designs notes</a></li>
     <li><a href="index.html">Past year exam</a></li>
+	<li><a href="index3.html">Study designs notes</a></li>
     <li><a href="index5.html">Tutor 2 slides</a></li>
     <li><a href="index6.html">Tutor 3 slides</a></li>
     <li><a href="index7.html">Tutor 4 slides</a></li>
+	<li><a href="index8.html">Tutor 5 slides</a></li>
   </ol>
 </div>
 `;

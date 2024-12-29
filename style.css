@@ -9,7 +9,9 @@ main {
 	margin: 0 auto;
 }
 
+img {
+		display: flex;
+		margin: 0 auto;}
+
 @media (max-width: 500px) {	
-	img {
-		max-width: 80%;}
 	}
