@@ -13,5 +13,27 @@ img {
 		display: flex;
 		margin: 0 auto;}
 
+.stt {
+	position: fixed;
+	bottom: 50px;
+	right: 150px;
+	z-index: 9;
+	padding: 5px 5px;
+	font-size: 12px;
+	text-align: center;
+	background-color: yellow;
+	color: grey;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+}
+
+.stt:active {
+	color: white;
+	background-color: black;
+}
+
 @media (max-width: 500px) {	
+	.stt {
+		right: 10px;	
 	}
+}
