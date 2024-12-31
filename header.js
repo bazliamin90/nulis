@@ -164,7 +164,7 @@ headerTemplate3.innerHTML = `
     <li><a href="index6.html">Tutor 3 slides</a></li>
     <li><a href="index7.html">Tutor 4 slides</a></li>
 	<li><a href="index8.html">Tutor 5 slides</a></li>
-	
+	<br>
 	<b>Tajwid</b>
 	<li><a href="index10.html">Tajwid: Hukum Ro</a></li>
   </ol>
@@ -212,11 +212,40 @@ class Header3 extends HTMLElement {
     searchBox.addEventListener('input', function () {
       const filter = searchBox.value.toLowerCase();
       const items = list.querySelectorAll('li');
+      const headings = list.querySelectorAll('b'); // Select all <b> elements
+    
+      let anyVisible = false;
+    
       items.forEach((item) => {
         const text = item.textContent.toLowerCase();
+        // Show or hide list items based on search filter
         item.style.display = text.includes(filter) ? '' : 'none';
       });
+    
+      // If the search is cleared, show all <b> elements
+      if (!filter) {
+        headings.forEach((heading) => {
+          heading.style.display = ''; // Show all <b> headings
+        });
+        return;
+      }
+    
+      // Hide or show <b> elements based on visibility of their child list items
+      headings.forEach((heading) => {
+        const listItems = heading.nextElementSibling ? heading.nextElementSibling.querySelectorAll('li') : [];
+        let anyVisible = false;
+    
+        listItems.forEach((item) => {
+          if (item.style.display !== 'none') {
+            anyVisible = true;
+          }
+        });
+    
+        // If no list items are visible under this heading, hide the heading
+        heading.style.display = anyVisible ? '' : 'none';
+      });
     });
+    
   }
 }
 
