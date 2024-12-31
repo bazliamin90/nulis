@@ -1,6 +1,9 @@
 body {
 	margin: 0 auto;
 	overflow-y: scroll;
+	font-family: arial, sans-serif;
+	line-height: 1.6;
+	color: #333333;
 }
 
 main {
@@ -10,13 +13,13 @@ main {
 }
 
 img {
-		display: flex;
-		margin: 0 auto;}
+	display: flex;
+	margin: 0 auto;}
 
 .stt {
 	position: fixed;
 	bottom: 50px;
-	right: 150px;
+	right: 400px;
 	z-index: 9;
 	padding: 5px 5px;
 	font-size: 12px;
@@ -32,7 +35,16 @@ img {
 	background-color: black;
 }
 
+@media (max-width: 800px) {	
+	.stt {
+		right: 40px;	
+	}
+}
+
 @media (max-width: 500px) {	
+	p {
+		font-size: 12px;
+	}
 	.stt {
 		right: 10px;	
 	}
