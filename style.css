@@ -42,9 +42,6 @@ img {
 }
 
 @media (max-width: 500px) {	
-	p {
-		font-size: 12px;
-	}
 	.stt {
 		right: 10px;	
 	}
