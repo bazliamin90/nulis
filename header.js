@@ -44,50 +44,50 @@ headerTemplate3.innerHTML = `
 	}
 	
 	.scroll-box {
-        width: 70%;
-        height: 150px;
-        border: 3px solid black;
-        padding: 10px;
-        background-color: #f9f9f9;
-        overflow-y: scroll;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: opacity 0.3s ease;
-        position: sticky;
-        top: 35%;
+    width: 70%;
+    height: 150px;
+    border: 3px solid black;
+    padding: 10px;
+    background-color: #f9f9f9;
+    overflow-y: scroll;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    position: sticky;
+    top: 35%;
 		margin: 0 auto;
-        display: none;
-        z-index: 1000;
+    display: none;
+    z-index: 1000;
     }
 
-    .scroll-box.visible {
-        display: block;
+  .scroll-box.visible {
+    display: block;
     }
 
 	.scroll-box .close-message {
-        font-family: monospace;
+    font-family: monospace;
 		font-size: 8px;
-        color: grey;
-        margin-bottom: 10px;
-        text-align: center;
-        font-style: italic;
+    color: grey;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
     }
 
-    .scroll-box .search-box {
-        width: 90%;
-        padding: 5px;
-        margin-bottom: 10px;
-        font-family: monospace;
+  .scroll-box .search-box {
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-family: monospace;
 		font-size: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     }
 
-    .scroll-box ol {
-        font-family: monospace;
+  .scroll-box ol {
+    font-family: monospace;
 		margin: 0; /* Remove extra margins */
-        padding: 0; /* Remove extra padding */
+    padding: 0; /* Remove extra padding */
 		list-style-position: outside;
-		padding-left: 1.5em;
+		padding-left: 2em;
 		color: red;
     }
 
@@ -98,23 +98,23 @@ headerTemplate3.innerHTML = `
 		color: black;
 	}
 
-    .scroll-box li {
+  .scroll-box li {
 		padding-bottom: 5px;
     }
 
-    #overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: none;
-        z-index: 999;
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
     }
 
-    #overlay.visible {
-        display: block;
+  #overlay.visible {
+    display: block;
     }
 	
 	@media (max-width: 600px) {
@@ -153,20 +153,18 @@ headerTemplate3.innerHTML = `
     aria-label="Search list items"
   />
   <ol id="list">
-    
+    <li><a href="index.html">About</a></li>
 	<b>Biostats & epidemiology</b>
-	<li><a href="index.html">About</a></li>
 	<li><a href="index2.html">Biostats notes</a></li>
     <li><a href="index4.html">BMJ Case report: OCD triggered by news of contaminated food</a></li>
     <li><a href="index9.html">Past year exam</a></li>
-	<li><a href="index3.html">Study designs notes</a></li>
+	  <li><a href="index3.html">Study designs</a></li>
     <li><a href="index5.html">Tutor 2 slides</a></li>
     <li><a href="index6.html">Tutor 3 slides</a></li>
     <li><a href="index7.html">Tutor 4 slides</a></li>
-	<li><a href="index8.html">Tutor 5 slides</a></li>
-	<br>
+	  <li><a href="index8.html">Tutor 5 slides</a></li>
 	<b>Tajwid</b>
-	<li><a href="index10.html">Tajwid: Hukum Ro</a></li>
+	  <li><a href="index10.html">Tajwid: Hukum Ro</a></li>
   </ol>
 </div>
 `;

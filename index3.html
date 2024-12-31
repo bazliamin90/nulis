@@ -16,20 +16,72 @@
 
 <a href="#" class="stt" title="Scroll to top" aria-label="Scroll to top">▲</a>
 
-  <script>
-    // Replace this with the URL of your deployed Google Apps Script web app
-    const webAppUrl = 'https://script.google.com/macros/s/AKfycbzEYVo3E2XA1fZMElL46WSECBo9zK8EXbODtw3gjbmBzB6IQfP-64g_5CnrcXieKt5U/exec';  // Replace with your Web App URL
+<!-- Modal for image zoom -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div id="caption"></div>
+</div>
 
-    // Fetch content from Google Docs using the Web App
-    fetch(webAppUrl)
-      .then(response => response.text())  // Get the HTML content
-      .then(data => {
-        document.getElementById('docContent').innerHTML = data;  // Inject the HTML content
-      })
-      .catch(error => {
-        console.error('Error fetching document:', error);
-        document.getElementById('docContent').innerText = 'Failed to load the document.';
-      });
-  </script>
+<script>
+  // Replace this with the URL of your deployed Google Apps Script web app
+  const webAppUrl = 'https://script.google.com/macros/s/AKfycbzEYVo3E2XA1fZMElL46WSECBo9zK8EXbODtw3gjbmBzB6IQfP-64g_5CnrcXieKt5U/exec';  // Replace with your Web App URL
+
+  // Fetch content from Google Docs using the Web App
+  fetch(webAppUrl)
+    .then(response => response.text())  // Get the HTML content
+    .then(data => {
+      document.getElementById('docContent').innerHTML = data;  // Inject the HTML content
+    })
+    .catch(error => {
+      console.error('Error fetching document:', error);
+      document.getElementById('docContent').innerText = 'Failed to load the document.';
+    });
+
+  // Modal and image handling
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  // Add event listener for image click
+  document.getElementById('docContent').addEventListener('click', function(event) {
+    const clickedElement = event.target;
+    
+    // Check if the clicked element is an image
+    if (clickedElement.tagName === 'IMG') {
+      modal.style.display = "block";
+      modalImg.src = clickedElement.src;  // Set the modal image source to the clicked image
+      captionText.innerHTML = clickedElement.alt || '';  // Set the caption (optional)
+    }
+  });
+
+  // Close the modal when the user clicks on <span> (x)
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  // Close the modal if the user clicks anywhere outside the modal
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // Scroll to top functionality
+  document.querySelector('.stt').addEventListener('click', function(e) {
+    e.preventDefault();  // Prevent the default anchor behavior
+    window.scrollTo({ top: 0, behavior: 'smooth' });  // Scroll smoothly to the top
+  });
+
+  // Show the scroll to top button when scrolling down
+  window.onscroll = function() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.querySelector('.stt').style.display = 'block';
+    } else {
+      document.querySelector('.stt').style.display = 'none';
+    }
+  };
+</script>
 </body>
 </html>
