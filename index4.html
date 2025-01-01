@@ -30,6 +30,12 @@
         console.error('Error fetching document:', error);
         document.getElementById('docContent').innerText = 'Failed to load the document.';
       });
+
+    // Scroll to top functionality
+      document.querySelector('.stt').addEventListener('click', function(e) {
+      e.preventDefault();  // Prevent the default anchor behavior
+      window.scrollTo({ top: 0, behavior: 'smooth' });  // Scroll smoothly to the top
+      });
   </script>
 </body>
 </html>

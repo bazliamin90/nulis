@@ -73,15 +73,6 @@
     e.preventDefault();  // Prevent the default anchor behavior
     window.scrollTo({ top: 0, behavior: 'smooth' });  // Scroll smoothly to the top
   });
-
-  // Show the scroll to top button when scrolling down
-  window.onscroll = function() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      document.querySelector('.stt').style.display = 'block';
-    } else {
-      document.querySelector('.stt').style.display = 'none';
-    }
-  };
   </script>
 </body>
 </html>
