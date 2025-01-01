@@ -45,7 +45,7 @@ headerTemplate3.innerHTML = `
 	
 	.scroll-box {
     width: 70%;
-    height: 150px;
+    height: 250px;
     border: 3px solid black;
     padding: 10px;
     background-color: #f9f9f9;
