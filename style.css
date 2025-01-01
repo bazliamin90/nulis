@@ -6,6 +6,10 @@ body {
 	color: #333333;
 }
 
+p > b {
+	color: blue;
+}
+
 main {
 	width: 95%;
 	max-width: 600px;
