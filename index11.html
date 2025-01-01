@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="header.js"></script>
+  <title>Bazli's</title>
+</head>
+<body>
+<header3-component></header3-component>
+<main>
+    <h3 class="title">Linear & logistic regression</h3>
+    <nav>
+        <ol class="mainbullet">
+          <li><a href="#1">Why regression?</a></li>
+          <li><a href="#2">Choosing type of regression</a></li>
+          <li><a href="#3">Example</a></li>
+          <li><a href="#4">Simplified</a></li>
+          <li><a href="#5">Multinomial logistic regression</a></li>
+          <li><a href="#6">Multivariate analysis</a></li>
+        </ol>
+    </nav>
+    <hr>
+    <ol class="mainbullet">
+		<a id="1" class="target"></a>
+		<li>To estimate association between independent and dependent variable.</li>
+		<li>Independent variable (iv) and dependent variable (dv) can be continuous or categorical (binary).		
+		<li>Some references stated that the iv must be a continuous variable.</li>
+		
+		<a id="2" class="target"></a>
+		<li>How to choose: 
+			<ol>
+			<li>iv + continuous dv = linear regression.
+			<li>iv + categorical dv = logistic regression.
+			</ol>
+        </li>
+		
+        <a id="3" class="target"></a>
+		<li>Example:
+			<ul>
+			<li>iv: Cancer, copd , ild
+			<li>dv: Days of stay at ICU (cont.), palliative care present or absent (cat.).
+			</ul>
+		</li>
+		<li>In the above example, both linear and logistic regression will be used.</li>
+    
+        <a id="4" class="target"></a>
+		<li>Regression tests, simplified:
+		<table>
+			<tr>
+				<th>Regression</th>
+				<th>iv</th>
+				<th>dv</th>
+				<th>Eg.</th>
+			</tr>
+			<tr>
+				<td>Simple linear</td>
+				<td>Cont.<br>1</td>
+				<td>Cont.<br>1</td>
+				<td>- income<br>- life expectancy</td>
+			</tr>
+			<tr>
+				<td>Multiple linear</td>
+				<td>Cont.<br>2/></td>
+				<td>Cont.<br>1</td>
+				<td>- income & minutes of exercise per day<br>- life expectancy</td>
+			</tr>
+			<tr>
+				<td>Logistic</td>
+				<td>Cont.</td>
+				<td>Cat. (Binary)</td>
+				<td>- drug dosage<br>- cured or not</td>
+			</tr>
+		</table>
+		</li>
+
+        <li>Logistic regression: Other examples
+        <table>
+           <tr>
+                <th>iv</th>
+                <th>dv</th>
+            </tr>
+            <tr>
+                <td>- Age (Cont.)<br>- BP (Cont.)<br>- Cholesterol (Cont.)<br>- Gender (Cat.)</td>
+                <td>- Cardiovascular event (Cat.), binary</td>
+                </tr>
+        </table>
+        </li>
+
+        <a id="5" class="target"></a>
+		<li>Multinomial logistic regression:
+		<br>
+		<br>To predict dv with more than two categories.
+		<br>
+		<table>
+			<tr>
+				<th>iv</th>
+				<th>dv</th>
+			</tr>
+			<tr>
+				<td>
+					Location in UK (Cat.)
+					<br>- London<br>- South UK<br>- North UK
+					<br>
+					<br>- Age (Cont.)
+				</td>
+					<td>
+					Type of drink (Cat.)
+					<br>- Coffee<br>- Soft drink<br>- Tea<br>- Plain water
+				</td>
+			</tr>
+			<tr>
+				<td>
+					- Employment duration (Cont.)
+					<br>- Male / female (Cat.)
+				</td>
+				<td>
+					Management level (Cat.)
+					<br>- Lower<br>- Middle<br>- Upper
+				</td>
+			</tr>
+		</table>
+		</li>
+
+        <a id="6" class="target"></a>
+		<li>Multivariate analysis:
+		<br><a>a) Multiple linear regression</a>
+		<br>- Predict cont. dv.
+		<p>
+			Assumptions of iv:
+			<br>- All IVs are cont.<br>- Has linear r/ship with dv
+			<br>- Homoskedasticity<br>- No autocorrelation
+			<br>- Normal distribution<br>- Multicollinearity
+		</p>
+		<p>
+			If iv is cat., first convert it to cont.
+			<br>- Binary cat. iv ⇝ 0, 1
+		</p> 
+
+		<br><a>b) Multiple logistic regression</a>
+		<br>- Predict binary cat. dv.
+		</li>
+    </ol>
+
+    <hr>
+	<h5>Reference(s)</h5>
+	
+	<ol class="ref">
+		<li>
+		<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9747134/" target="_blank">
+		Linear and logistic regression models: when to use and how to interpret them?
+		</a>
+		</li>
+		
+		<li>
+		<a href="https://www.scribbr.com/statistics/statistical-tests/" target="_blank">
+		Choosing the Right Statistical Test
+		</a>
+		</li>
+		
+		<li>
+		<a href="https://statistics.laerd.com/spss-tutorials/multinomial-logistic-regression-using-spss-statistics.php" target="_blank">
+		Multinomial Logistic Regression using SPSS Statistics
+		</a>
+		</li>
+		
+		<li>
+		<a href="https://manifold.open.umn.edu/read/chapter-7-steps-for-multivariate-analysis-and-results/section/3c6a9d68-db0d-4df8-ab22-8dfdeaef3a0a" target="_blank">
+		Steps for Multivariate Analaysis and Results
+		</a>
+		</li>
+	</ol>
+</main>
+
+<br><br><br><br><br>
+
+<a href="#" class="stt" title="Scroll to top" aria-label="Scroll to top">▲</a>
+
+  <script>
+    // Scroll to top functionality
+        document.querySelector('.stt').addEventListener('click', function(e) {
+        e.preventDefault();  // Prevent the default anchor behavior
+        window.scrollTo({ top: 0, behavior: 'smooth' });  // Scroll smoothly to the top
+    });
+  </script>
+</body>
+</html>

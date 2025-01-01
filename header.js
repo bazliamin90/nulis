@@ -127,10 +127,10 @@ headerTemplate3.innerHTML = `
 			width: 100%;
 		}
 		.scroll-box {
-			height: 100vh;
+			height: 85vh;
 			width: 70%;
 			position: sticky;
-			top: 0;
+			top: 45px;
 			left: 0;
 			transform: none;
 			margin: 0 0;
@@ -154,18 +154,21 @@ headerTemplate3.innerHTML = `
   />
   <ol id="list">
     <li><a href="index.html">About</a></li>
-	<b>Biostats & epidemiology</b>
+	<hr><b>Biostats & epidemiology</b>
 	<li><a href="index2.html">Biostats notes</a></li>
-    <li><a href="index4.html">BMJ Case report: OCD triggered by news of contaminated food</a></li>
+    <li><a href="index11.html">Linear & logistic regression</a></li>
     <li><a href="index9.html">Past year exam</a></li>
 	  <li><a href="index3.html">Study designs</a></li>
     <li><a href="index5.html">Tutor 2 slides</a></li>
     <li><a href="index6.html">Tutor 3 slides</a></li>
     <li><a href="index7.html">Tutor 4 slides</a></li>
 	  <li><a href="index8.html">Tutor 5 slides</a></li>
-	<b>Tajwid</b>
+	<hr><b>Tajwid</b>
 	  <li><a href="index10.html">Tajwid: Hukum Ro</a></li>
+  <hr><b>Others</b>
+	  <li><a href="index4.html">BMJ Case report: OCD triggered by news of contaminated food</a></li>
   </ol>
+<br><br>
 </div>
 `;
 
@@ -206,31 +209,59 @@ class Header3 extends HTMLElement {
       event.stopPropagation();
     });
 
+    function toggleScrollBox(scrollBox, overlay) {
+      if (scrollBox.classList.contains('visible')) {
+        hideScrollBox(scrollBox, overlay);
+      } else {
+        showScrollBox(scrollBox, overlay);
+      }
+    }
+    
+    function showScrollBox(scrollBox, overlay) {
+      scrollBox.classList.add('visible');
+      overlay.classList.add('visible');
+      // Disable scrolling on the body
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function hideScrollBox(scrollBox, overlay) {
+      scrollBox.classList.remove('visible');
+      overlay.classList.remove('visible');
+      // Re-enable scrolling on the body
+      document.body.style.overflow = '';
+    }    
+
     // Add search functionality
     searchBox.addEventListener('input', function () {
       const filter = searchBox.value.toLowerCase();
       const items = list.querySelectorAll('li');
       const headings = list.querySelectorAll('b'); // Select all <b> elements
+      const horizontalRules = list.querySelectorAll('hr'); // Select all <hr> elements
     
       let anyVisible = false;
     
+      // Filter list items
       items.forEach((item) => {
         const text = item.textContent.toLowerCase();
-        // Show or hide list items based on search filter
         item.style.display = text.includes(filter) ? '' : 'none';
       });
     
-      // If the search is cleared, show all <b> elements
+      // If the search is cleared, show all <b> and <hr> elements
       if (!filter) {
         headings.forEach((heading) => {
           heading.style.display = ''; // Show all <b> headings
+        });
+        horizontalRules.forEach((hr) => {
+          hr.style.display = ''; // Show all <hr> elements
         });
         return;
       }
     
       // Hide or show <b> elements based on visibility of their child list items
       headings.forEach((heading) => {
-        const listItems = heading.nextElementSibling ? heading.nextElementSibling.querySelectorAll('li') : [];
+        const listItems = heading.nextElementSibling
+          ? heading.nextElementSibling.querySelectorAll('li')
+          : [];
         let anyVisible = false;
     
         listItems.forEach((item) => {
@@ -242,8 +273,17 @@ class Header3 extends HTMLElement {
         // If no list items are visible under this heading, hide the heading
         heading.style.display = anyVisible ? '' : 'none';
       });
-    });
     
+      // Hide or show <hr> elements based on visibility of their adjacent list items
+      horizontalRules.forEach((hr) => {
+        const nextSibling = hr.nextElementSibling;
+        if (nextSibling && nextSibling.style.display !== 'none') {
+          hr.style.display = ''; // Show <hr> if the next sibling is visible
+        } else {
+          hr.style.display = 'none'; // Hide <hr> if no visible next sibling
+        }
+      });
+    });    
   }
 }
 

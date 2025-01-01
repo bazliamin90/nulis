@@ -16,6 +16,78 @@ main {
 	margin: 0 auto;
 }
 
+ol, ul {
+	padding-left: 30px;
+}
+
+ol ::marker {
+	color: red;
+}
+
+li {
+	margin-bottom: 10px;
+}
+
+li > a {
+	color: white;
+	background-color: #333;
+	padding: 2px 5px;
+	border-radius: 4px;
+}
+
+.target {
+	scroll-margin-top: 40px;
+}
+
+nav {
+	border: 2px solid #ccc;
+	padding: 10px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	background-color: #f9f9f9;
+}
+
+nav ol {
+	display: flex;
+	flex-wrap: wrap; /* Allows wrapping to a new line if space is limited */
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	justify-content: space-around; /* Space evenly between items */
+}
+
+nav ol li {
+	margin-right: 15px; /* Space between list items */
+	font-size: 12px;
+}
+
+nav ol li a {
+	color: white;
+	text-decoration: none;
+}
+
+table th {
+	background-color: #f4f4f4;
+}
+
+table, th, td {
+	border: 1px solid #333;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+.ref {
+	font-size: 12px;
+	font-style: italic;
+	color: grey;
+}
+
+.ref li > a {
+	color: grey;
+	background-color: white;
+	text-decoration: none;
+}
+
 img {
 	display: flex;
 	margin: 0 auto;}
@@ -95,6 +167,9 @@ img {
 }
 
 @media (max-width: 500px) {	
+	table {
+		font-size: 10px;
+	}
 	.stt {
 		right: 10px;	
 	}
