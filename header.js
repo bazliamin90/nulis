@@ -164,7 +164,7 @@ headerTemplate3.innerHTML = `
     <li><a href="index7.html">Tutor 4 slides</a></li>
 	  <li><a href="index8.html">Tutor 5 slides</a></li>
 	<hr><b>Tajwid</b>
-	  <li><a href="index10.html">Tajwid: Hukum Ro</a></li>
+	  <li><a href="index10.html">Hukum Ro tebal & nipis</a></li>
   <hr><b>Others</b>
 	  <li><a href="index4.html">BMJ Case report: OCD triggered by news of contaminated food</a></li>
   </ol>
@@ -220,15 +220,20 @@ class Header3 extends HTMLElement {
     function showScrollBox(scrollBox, overlay) {
       scrollBox.classList.add('visible');
       overlay.classList.add('visible');
-      // Disable scrolling on the body
+      
+      // Prevent scrolling but keep scrollbar visible
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollBarWidth}px`;
     }
     
     function hideScrollBox(scrollBox, overlay) {
       scrollBox.classList.remove('visible');
       overlay.classList.remove('visible');
-      // Re-enable scrolling on the body
+      
+      // Re-enable scrolling and reset padding
       document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
     }    
 
     // Add search functionality
