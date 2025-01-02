@@ -44,6 +44,10 @@ headerTemplate3.innerHTML = `
 	}
 	
 	.scroll-box {
+    position: fixed; /* Change to fixed */
+    top: 35%; /* Adjust to desired vertical placement */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
     width: 70%;
     height: 250px;
     border: 3px solid black;
@@ -52,16 +56,13 @@ headerTemplate3.innerHTML = `
     overflow-y: scroll;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s ease;
-    position: sticky;
-    top: 35%;
-		margin: 0 auto;
     display: none;
     z-index: 1000;
-    }
+  }
 
   .scroll-box.visible {
     display: block;
-    }
+  }
 
 	.scroll-box .close-message {
     font-family: monospace;
@@ -103,14 +104,14 @@ headerTemplate3.innerHTML = `
     }
 
   #overlay {
-    position: fixed;
+    position: fixed; /* Ensure it covers the viewport */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
-    z-index: 999;
+    z-index: 999; /* One level below the scroll box */
     }
 
   #overlay.visible {
@@ -122,14 +123,12 @@ headerTemplate3.innerHTML = `
 			border: none;
 			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 		}
-		
 		h1 {
 			width: 100%;
 		}
 		.scroll-box {
 			height: 85vh;
 			width: 70%;
-			position: sticky;
 			top: 45px;
 			left: 0;
 			transform: none;
