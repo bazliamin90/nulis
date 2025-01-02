@@ -156,13 +156,13 @@ img {
 
   iframe {
 	display: block;
-	height: 70vh;
+	height: 60vh;
 	width: 100%; 
 	border: none;  /* Get rid of the border */
-	border-radius: 10px;
 	background: lightyellow;
 	margin-left: auto;
 	margin-right: auto;
+	clip-path: inset(0px 0px 40px 0px); /* Hides the bottom 20px of the iframe */
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   }
 
@@ -190,8 +190,5 @@ img {
 	}
 	.close {
 		top: 10%;
-	}
-	iframe {
-		height: 50vh;
 	}
 }
